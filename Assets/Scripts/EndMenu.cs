@@ -1,0 +1,73 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Net.Http;
+
+public class EndMenu : MonoBehaviour
+{
+    // COMPONENTS
+    [SerializeField] Text scoreText;
+    [SerializeField] Text leaderboard;
+
+    // INFO
+    int score;
+    string username;
+    string email;
+
+    [SerializeField] dreamloLeaderBoard dreamloLB;
+    List<dreamloLeaderBoard.Score> scoreList;
+
+    void Start()
+    {
+        score = CrossSceneInformation.Score;
+        username = CrossSceneInformation.Username;
+        email = CrossSceneInformation.Email;
+
+        SetScoreText(score);
+
+        dreamloLB = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
+        // Add user, score, seconds, email
+        dreamloLB.AddScore(username , score, 0, email);
+        StartCoroutine(Tryer()); 
+    }
+
+    public void SetScoreText(float score)
+    {
+        scoreText.text = "¡Conseguiste " + score + " puntos!";
+    }
+
+    IEnumerator Tryer()
+    {
+        do
+        {
+            scoreList = dreamloLB.ToListHighToLow();
+
+			if (scoreList == null) 
+			{
+				leaderboard.text = "(Cargando...)";
+			} 
+			else 
+			{
+                leaderboard.text = "";
+				int maxToDisplay = 10;
+				int count = 0;
+
+				foreach (dreamloLeaderBoard.Score currentScore in scoreList)
+				{
+					count++;
+
+                    leaderboard.text += count + ". Puntaje: " + currentScore.score.ToString() + " - " + currentScore.playerName.Replace("+"," ") + "\n";
+
+                    if (count >= maxToDisplay) 
+                        break;
+				}    
+            }
+
+            yield return new WaitForSeconds(3);
+
+        }while(scoreList.Count==0);
+    }
+}
