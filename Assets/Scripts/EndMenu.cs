@@ -30,7 +30,7 @@ public class EndMenu : MonoBehaviour
 
         dreamloLB = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
         // Add user, score, seconds, email
-        dreamloLB.AddScore(username , score, 0, email);
+        dreamloLB.AddScore(username , Convert.ToInt32(score), 0, email);
         StartCoroutine(Tryer()); 
     }
 

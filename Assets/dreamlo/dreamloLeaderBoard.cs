@@ -10,7 +10,8 @@ public class dreamloLeaderBoard : MonoBehaviour
 	string dreamloWebserviceURL = "http://dreamlo.com/lb/";
 
 	public bool IUpgradedAndGotSSL = false;
-	public string privateCode = "";
+
+	[TextArea] public string privateCode = "";
 	public string publicCode = "";
 	
 	string highScores = "";

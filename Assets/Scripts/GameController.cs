@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour
     
     // MANAGING
     bool startedGame;
-    bool firstTry;
+    bool firstTry = false;
 
     // COMPONENTS
     [SerializeField] Text scoreText;
 
     // TIMER
-    float timeCount = 60;
+    float timeCount = 5f;
     [SerializeField] Text timerText;
     [SerializeField] bool isPlaying; // Turn to true when clicking the first card
 
@@ -27,12 +27,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         timerText.text = timeCount.ToString("F2");
+        isPlaying = true;
     }
 
     void Update()
     {
         // START GAME: Set isPlaying to true
-        if (firstTry && timeCount == 60)
+        if (firstTry && timeCount == 5f)
         {
             StartGame();
         }
@@ -44,9 +45,10 @@ public class GameController : MonoBehaviour
         }
 
         // END GAME TO END MENU
-        if (isPlaying && timeCount == 0)
+        if (isPlaying && timeCount <= 0f)
         {
             isPlaying = false;
+            Debug.Log("WIN");
             StartCoroutine(EndGame());
         }
     }
@@ -56,9 +58,15 @@ public class GameController : MonoBehaviour
         isPlaying = true;
     }
 
+    // Show instructions of the game
+    IEnumerator ShowInstructions()
+    {
+        yield return new WaitForSeconds(10f);
+    }
+
     IEnumerator EndGame()
     {
-        CrossSceneInformation.Score = Convert.ToInt32(scoreText.text);
+        CrossSceneInformation.Score = Convert.ToInt32(scoreText.text.Split(' ')[1]);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(2);
     }
@@ -66,6 +74,6 @@ public class GameController : MonoBehaviour
     void HandleTimer()
     {
         timeCount -= Time.deltaTime;
-        timerText.text = timeCount.ToString("F2");
+        timerText.text = "Tiempo: " + timeCount.ToString("F2");
     }
 }
