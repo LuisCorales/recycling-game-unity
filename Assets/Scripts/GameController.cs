@@ -8,6 +8,10 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     // TRASH AND BIN
+    [SerializeField] GameObject blueBin;
+    [SerializeField] GameObject greenBin;
+    [SerializeField] GameObject redBin;
+    [SerializeField] GameObject blackBin;
     
     // MANAGING
     bool startedGame;
