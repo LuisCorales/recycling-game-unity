@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrashBin : MonoBehaviour
 {
+    [SerializeField] GameObject gameController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,6 @@ public class TrashBin : MonoBehaviour
 
     public void BinClicked()
     {
-        Debug.Log("TEST BLUE");
+        gameController.GetComponent<GameController>().SpawnTrashItem();
     }
 }

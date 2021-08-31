@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject greenBin;
     [SerializeField] GameObject redBin;
     [SerializeField] GameObject blackBin;
+
+    [SerializeField] GameObject spawner;
+    [SerializeField] List<GameObject> trashItems;
     
     // MANAGING
     bool startedGame;
@@ -21,7 +24,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Text scoreText;
 
     // TIMER
-    float timeCount = 5f;
+    float timeCount = 60f;
     [SerializeField] Text timerText;
     [SerializeField] bool isPlaying; // Turn to true when clicking the first card
 
@@ -32,12 +35,14 @@ public class GameController : MonoBehaviour
     {
         timerText.text = timeCount.ToString("F2");
         isPlaying = true;
+
+        SpawnTrashItem();
     }
 
     void Update()
     {
         // START GAME: Set isPlaying to true
-        if (firstTry && timeCount == 5f)
+        if (firstTry && timeCount == 60f)
         {
             StartGame();
         }
@@ -79,5 +84,16 @@ public class GameController : MonoBehaviour
     {
         timeCount -= Time.deltaTime;
         timerText.text = "Tiempo: " + timeCount.ToString("F2");
+    }
+
+    public void SpawnTrashItem()
+    {    
+        if(spawner.transform.childCount > 0)
+        {
+            Destroy(spawner.transform.GetChild(0).gameObject);
+        }
+
+        var rand = UnityEngine.Random.Range(0, trashItems.Count);
+        Instantiate(trashItems[rand], spawner.transform);
     }
 }
