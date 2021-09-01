@@ -102,6 +102,7 @@ public class GameController : MonoBehaviour
     public void SpawnTrashItem(GameObject bin)
     {
         float time = 0;
+        string binName = bin.name;
         
         blockPanel.SetActive(true);
 
@@ -115,6 +116,7 @@ public class GameController : MonoBehaviour
             if(CheckIfCorrect(item, bin))
             {
                 // Play animation where trash go to the correct bin
+                itemAnimator.SetTrigger(binName);
             }
             else
             {
