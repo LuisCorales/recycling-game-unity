@@ -365,7 +365,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 864761877}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -631,7 +631,7 @@ RectTransform:
   m_Children:
   - {fileID: 404108156}
   m_Father: {fileID: 864761877}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1022,10 +1022,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1184040116}
-  - {fileID: 1707645732}
-  - {fileID: 171443548}
-  - {fileID: 1443397406}
   - {fileID: 543942529}
+  - {fileID: 1707645732}
+  - {fileID: 1443397406}
+  - {fileID: 171443548}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1298,10 +1298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f374d897dd45d54a8d2db4924114828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueBin: {fileID: 1045356467}
-  greenBin: {fileID: 103971687}
-  redBin: {fileID: 845322336}
-  blackBin: {fileID: 619433655}
   spawner: {fileID: 404108155}
   trashItems:
   - {fileID: 6571470215794442270, guid: 89584020f36fc9a4f803e0f419301453, type: 3}
@@ -1401,7 +1397,7 @@ RectTransform:
   - {fileID: 1859039637}
   - {fileID: 305126295}
   m_Father: {fileID: 864761877}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

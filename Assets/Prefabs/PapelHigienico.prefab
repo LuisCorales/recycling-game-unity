@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6571470215794442266}
   - component: {fileID: 6571470215794442269}
   - component: {fileID: 6571470215794442268}
+  - component: {fileID: 220564081009108962}
   m_Layer: 0
   m_Name: PapelHigienico
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashType: red
+--- !u!95 &220564081009108962
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571470215794442270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5290ff596a7ec0a4b9c114702d6b49fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

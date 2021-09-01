@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     // MANAGING
     bool firstTry = false;
     int score;
+    bool isMoving;
 
     public bool FirstTry {
         get { return firstTry; }
@@ -94,22 +95,41 @@ public class GameController : MonoBehaviour
     {
         var rand = UnityEngine.Random.Range(0, trashItems.Count);
         Instantiate(trashItems[rand], spawner.transform);
+
+        blockPanel.SetActive(false);
     }
 
     public void SpawnTrashItem(GameObject bin)
-    {    
+    {
+        float time = 0;
+        
+        blockPanel.SetActive(true);
+
         if(spawner.transform.childCount > 0)
         {
             var item = spawner.transform.GetChild(0).gameObject;
-            CheckIfCorrect(item, bin);
-            Destroy(item);
+            var itemAnimator = item.GetComponent<Animator>();
+
+            time = itemAnimator.GetCurrentAnimatorStateInfo(0).length;
+        
+            if(CheckIfCorrect(item, bin))
+            {
+                // Play animation where trash go to the correct bin
+            }
+            else
+            {
+                // Play animation where trash flies away
+                itemAnimator.SetTrigger("Fly");
+            }
+
+            // Destroy trash item after animation is completed
+            Destroy(item, time + 0.1f); 
         }
 
-        var rand = UnityEngine.Random.Range(0, trashItems.Count);
-        Instantiate(trashItems[rand], spawner.transform);
+        Invoke("SpawnTrashItem", time + 0.2f);
     }
 
-    void CheckIfCorrect(GameObject item, GameObject bin)
+    bool CheckIfCorrect(GameObject item, GameObject bin)
     {
         var itemType = item.GetComponent<Trash>().TrashType;
 
@@ -119,10 +139,12 @@ public class GameController : MonoBehaviour
         || itemType == "green" && bin.name == "GreenBinButton")
         {
             GainPoints(true);
+            return true;
         }
         else
         {
             GainPoints(false);
+            return false;
         }
     }
 
