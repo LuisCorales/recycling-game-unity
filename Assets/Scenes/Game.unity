@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 103971691}
   - component: {fileID: 103971690}
   - component: {fileID: 103971689}
+  - component: {fileID: 103971692}
   m_Layer: 5
   m_Name: GreenBinButton
   m_TagString: Untagged
@@ -205,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443397407}
+      - m_Target: {fileID: 103971692}
         m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
         m_MethodName: BinClicked
         m_Mode: 1
@@ -255,6 +256,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103971687}
   m_CullTransparentMesh: 1
+--- !u!114 &103971692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103971687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 1208682150}
 --- !u!1 &163468112
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +650,7 @@ GameObject:
   - component: {fileID: 619433659}
   - component: {fileID: 619433658}
   - component: {fileID: 619433657}
+  - component: {fileID: 619433660}
   m_Layer: 5
   m_Name: BlackBinButton
   m_TagString: Untagged
@@ -706,7 +721,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443397407}
+      - m_Target: {fileID: 619433660}
         m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
         m_MethodName: BinClicked
         m_Mode: 1
@@ -756,6 +771,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619433655}
   m_CullTransparentMesh: 1
+--- !u!114 &619433660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619433655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 1208682150}
 --- !u!1 &845322336
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +796,7 @@ GameObject:
   - component: {fileID: 845322340}
   - component: {fileID: 845322339}
   - component: {fileID: 845322338}
+  - component: {fileID: 845322341}
   m_Layer: 5
   m_Name: RedBinButton
   m_TagString: Untagged
@@ -838,7 +867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443397407}
+      - m_Target: {fileID: 845322341}
         m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
         m_MethodName: BinClicked
         m_Mode: 1
@@ -888,6 +917,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845322336}
   m_CullTransparentMesh: 1
+--- !u!114 &845322341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845322336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 1208682150}
 --- !u!1 &864761873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1046,7 @@ GameObject:
   - component: {fileID: 1045356471}
   - component: {fileID: 1045356470}
   - component: {fileID: 1045356469}
+  - component: {fileID: 1045356472}
   m_Layer: 5
   m_Name: BlueBinButton
   m_TagString: Untagged
@@ -1074,7 +1117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443397407}
+      - m_Target: {fileID: 1045356472}
         m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
         m_MethodName: BinClicked
         m_Mode: 1
@@ -1124,6 +1167,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045356467}
   m_CullTransparentMesh: 1
+--- !u!114 &1045356472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045356467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 1208682150}
 --- !u!1 &1184040115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1341,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443397406}
-  - component: {fileID: 1443397407}
   m_Layer: 5
   m_Name: Bins
   m_TagString: Untagged
@@ -1316,19 +1371,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1443397407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443397405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game: {fileID: 1208682150}
 --- !u!1 &1707645731
 GameObject:
   m_ObjectHideFlags: 0

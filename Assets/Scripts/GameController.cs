@@ -8,16 +8,10 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     // TRASH AND BIN
-    [SerializeField] GameObject blueBin;
-    [SerializeField] GameObject greenBin;
-    [SerializeField] GameObject redBin;
-    [SerializeField] GameObject blackBin;
-
     [SerializeField] GameObject spawner;
     [SerializeField] List<GameObject> trashItems;
     
     // MANAGING
-    bool startedGame;
     bool firstTry = false;
     int score;
 
@@ -31,7 +25,6 @@ public class GameController : MonoBehaviour
 
     // TIMER
     float timeCount = 60f;
-    public float TimeCount => timeCount;
     
     [SerializeField] Text timerText;
     [SerializeField] bool isPlaying; // Turn to true when clicking the first card
@@ -43,6 +36,9 @@ public class GameController : MonoBehaviour
     {
         timerText.text = "Tiempo: " + timeCount.ToString("F2");
         scoreText.text = "Puntos: " + score;
+
+        blockPanel.SetActive(false);
+
         SpawnTrashItem();
     }
 
@@ -81,6 +77,8 @@ public class GameController : MonoBehaviour
     IEnumerator EndGame()
     {
         isPlaying = false;
+
+        blockPanel.SetActive(true);
         CrossSceneInformation.Score = Convert.ToInt32(scoreText.text.Split(' ')[1]);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(2);
