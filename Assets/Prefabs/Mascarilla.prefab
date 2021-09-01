@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6571470215794442269}
   - component: {fileID: 6571470215794442268}
   m_Layer: 0
-  m_Name: BolsaPapel 14
+  m_Name: Mascarilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9495b864344d51479c8494f59db3712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashType: green
+  trashType: red

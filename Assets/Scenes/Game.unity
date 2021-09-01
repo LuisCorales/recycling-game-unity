@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b712f1ff8234244bc6f88e4002fecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 1208682150}
+  game: {fileID: 1208682150}
 --- !u!1 &1707645731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Puntos: 100'
+  m_Text: 'Puntos: 1'
 --- !u!222 &1859039639
 CanvasRenderer:
   m_ObjectHideFlags: 0

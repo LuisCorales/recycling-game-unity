@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashBin : MonoBehaviour
 {
-    [SerializeField] GameObject gameController;
+    [SerializeField] GameObject game;
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameController = game.GetComponent<GameController>();
     }
 
     public void BinClicked()
     {
-        gameController.GetComponent<GameController>().SpawnTrashItem();
+        if(!gameController.FirstTry)
+            gameController.FirstTry = true;
+        
+        gameController.SpawnTrashItem(this.gameObject);
     }
 }
