@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9495b864344d51479c8494f59db3712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashType: black
+  trashType: green
 --- !u!95 &-6027564251895370115
 Animator:
   serializedVersion: 3

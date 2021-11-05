@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndMenu : MonoBehaviour
@@ -71,5 +72,10 @@ public class EndMenu : MonoBehaviour
             yield return new WaitForSeconds(3);
 
         }while(scoreList.Count==0);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0); // Load the start menu
     }
 }
